@@ -251,5 +251,5 @@ mera_bar1 = Bar([
                     )
                                        
             ],
-               background=background, size=26, margin=[10, 10, 10, 10],
+               background=background, size=26, margin=[10, 0, 10, 0],
         )
