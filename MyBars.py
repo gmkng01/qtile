@@ -56,10 +56,10 @@ mera_bar1 = Bar([
                     ),
 
                     widget.GroupBox(
-                            active=colors.draculla['cm'],
+                            active=colors.changable['active'],
                             inactive=colors.draculla['cl'],
                             highlight_method='line',
-                            block_highlight_text_color=colors.gruvbox['magenta'],
+                            block_highlight_text_color=colors.changable['highlight'],
                             borderwidth=0,
                             highlight_color=menuback,
                             background=menuback,
@@ -246,10 +246,10 @@ mera_bar1 = Bar([
 
                     widget.Systray(
                             background=rand_,
-                            foreground = gruvbox['fg0'],
+                            foreground = colors.draculla['fg'],
                             icon_size = 22,
                     )
                                        
             ],
-               background=background, size=26, margin=[10, 0, 10, 0],
+               background=background, size=26, margin=[0, 0, 0, 0],
         )

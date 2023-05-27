@@ -85,10 +85,12 @@ draculla = {
 
 changable = {
     'slide1':           '#FAE6C6',
-    'slide2':           '#EE4757',
-    'rand3':            '#1C616D',
+    'slide2':           '#665c54',
+    'rand3':            '#000000',
     'rand4':            '#341514',
-    'menuback':         '#EDC400',
+    'menuback':         '#f8f8f2',
     'timeback':         '#cbeef3',
-    'netback':          '#FFD97F'
+    'netback':          '#FFD97F',
+    'highlight':        '#FF8542',
+    'active':           '#00B08E'
 }
