@@ -84,8 +84,8 @@ draculla = {
 }
 
 changable = {
-    'slide1':           '#FAE6C6',
-    'slide2':           '#665c54',
+    'slide1':           '#334E47',
+    'slide2':           '#A4F1FD',
     'rand3':            '#000000',
     'rand4':            '#341514',
     'menuback':         '#f8f8f2',
@@ -94,3 +94,4 @@ changable = {
     'highlight':        '#FF8542',
     'active':           '#00B08E'
 }
+

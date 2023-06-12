@@ -41,6 +41,7 @@ def menu():
   qtile.cmd_spawn('/home/abhi/.config/rofi/launchers/type-1/launcher.sh')
 
 # ********************************-------------------------------Key_bidings-------------------------------********************************
+
 keys = [
          ### The essentials
          Key([mod], "Return",
@@ -222,7 +223,7 @@ for i in groups:
     )
 
 layout_theme = {"border_width": 0,
-                "margin": [0, 0, 0, 0],
+                "margin": [6, 6, 6, 6],
                 "border_focus": "e1acff",
                 "border_normal": "1D2330"
                 }
