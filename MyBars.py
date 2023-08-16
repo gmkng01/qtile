@@ -27,6 +27,7 @@ rand_ = colors.changable['rand3']
 menuback = colors.changable['menuback']
 timeback = colors.changable['timeback']
 netback = colors.changable['netback']
+trn = colors.changable['trn']
 
 mera_bar1 = Bar([
                     widget.TextBox(
@@ -135,7 +136,9 @@ mera_bar1 = Bar([
                             fontsize = 22
                     ),
 
-                    widget.Spacer(),
+                    widget.Spacer(
+                #       background = slide2,
+                    ),
 
                     
                     widget.TextBox(
@@ -244,6 +247,15 @@ mera_bar1 = Bar([
                             fontsize = 22
                     ),
 
+                    widget.TextBox(
+                        text='  ',
+                        # background = colors[0],
+                        # foreground = colors[2],
+                        fontsize = 18,
+                        mouse_callbacks = {'Button1': brightup, 'Button3': brightdown},
+                        padding = 0
+                        ),
+
                     widget.Systray(
                             background=rand_,
                             foreground = colors.draculla['fg'],
@@ -251,5 +263,5 @@ mera_bar1 = Bar([
                     )
                                        
             ],
-               background=background, size=26, margin=[6, 6, 10, 6],
+               background=background, size=26, margin=[0, 0, 0, 0],
         )

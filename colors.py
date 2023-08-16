@@ -92,6 +92,7 @@ changable = {
     'timeback':         '#cbeef3',
     'netback':          '#FFD97F',
     'highlight':        '#FF8542',
-    'active':           '#00B08E'
+    'active':           '#00B08E',
+    'trn':              '#ffffff0',
 }
 
