@@ -42,7 +42,7 @@ mera_bar1 = Bar([
                    widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide1,
+                            background = trn,
                             foreground = rand_,
                             padding = 0,
                             fontsize = 19
@@ -50,7 +50,7 @@ mera_bar1 = Bar([
                    widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide1,
+                            background = trn,
                             foreground = menuback,
                             padding = 0,
                             fontsize = 22
@@ -74,7 +74,7 @@ mera_bar1 = Bar([
                     widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide1,
+                            background = trn,
                             foreground = menuback,
                             padding = 0,
                             fontsize = 19
@@ -82,7 +82,7 @@ mera_bar1 = Bar([
                    widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide1,
+                            background = trn,
                             foreground = background,
                             padding = 0,
                             fontsize = 22
@@ -105,7 +105,7 @@ mera_bar1 = Bar([
                     widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide2,
+                            background = trn,
                             foreground = background,
                             padding = 0,
                             fontsize = 19
@@ -113,7 +113,7 @@ mera_bar1 = Bar([
                    widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide2,
+                            background = trn,
                             foreground = background,
                             padding = 0,
                             fontsize = 22
@@ -122,37 +122,37 @@ mera_bar1 = Bar([
                     widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide2,
+                            background = trn,
                             foreground = background,
                             padding = 0,
                             fontsize = 19
                     ),
-                   widget.TextBox(
-                            text = '',
-                            font = "JetBrainsMono Nerd Font Mono",
-                            background = slide2,
-                            foreground = background,
-                            padding = 0,
-                            fontsize = 22
-                    ),
+                #    widget.TextBox(
+                #             text = '',
+                #             font = "JetBrainsMono Nerd Font Mono",
+                #             background = slide2,
+                #             foreground = background,
+                #             padding = 0,
+                #             fontsize = 22
+                #     ),
 
                     widget.Spacer(
-                #       background = slide2,
+                      background = trn,
                     ),
 
                     
-                    widget.TextBox(
-                            text = '',
-                            font = "JetBrainsMono Nerd Font Mono",
-                            background = slide2,
-                            foreground = background,
-                            padding = 0,
-                            fontsize = 19
-                    ),
+                #     widget.TextBox(
+                #             text = '',
+                #             font = "JetBrainsMono Nerd Font Mono",
+                #             background = trn,
+                #             foreground = background,
+                #             padding = 0,
+                #             fontsize = 23
+                #     ),
                    widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide2,
+                            background = trn,
                             foreground = background,
                             padding = 0,
                             fontsize = 22
@@ -161,7 +161,7 @@ mera_bar1 = Bar([
                     widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide2,
+                            background = trn,
                             foreground = background,
                             padding = 0,
                             fontsize = 19
@@ -169,7 +169,7 @@ mera_bar1 = Bar([
                    widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide2,
+                            background = trn,
                             foreground = background,
                             padding = 0,
                             fontsize = 22
@@ -208,7 +208,7 @@ mera_bar1 = Bar([
                      widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide1,
+                            background = trn,
                             foreground = background,
                             padding = 0,
                             fontsize = 19
@@ -216,7 +216,7 @@ mera_bar1 = Bar([
                    widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide1,
+                            background = trn,
                             foreground = background,
                             padding = 0,
                             fontsize = 22
@@ -233,7 +233,7 @@ mera_bar1 = Bar([
                    widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide1,
+                            background = trn,
                             foreground = background,
                             padding = 0,
                             fontsize = 19
@@ -241,27 +241,27 @@ mera_bar1 = Bar([
                    widget.TextBox(
                             text = '',
                             font = "JetBrainsMono Nerd Font Mono",
-                            background = slide1,
+                            background = trn,
                             foreground = rand_,
                             padding = 0,
                             fontsize = 22
                     ),
 
-                    widget.TextBox(
-                        text='  ',
-                        # background = colors[0],
-                        # foreground = colors[2],
-                        fontsize = 18,
-                        mouse_callbacks = {'Button1': brightup, 'Button3': brightdown},
-                        padding = 0
-                        ),
+                #     widget.TextBox(
+                #         text='',
+                #         # background = colors[0],
+                #         # foreground = colors[2],
+                #         fontsize = 18,
+                #         mouse_callbacks = {'Button1': brightup, 'Button3': brightdown},
+                #         padding = 0
+                #         ),
 
-                    widget.Systray(
-                            background=rand_,
-                            foreground = colors.draculla['fg'],
-                            icon_size = 22,
-                    )
+                #     widget.Systray(
+                #             background="#000000",
+                #             foreground = "#000000",
+                #             icon_size = 22,
+                #     )
                                        
             ],
-               background=background, size=26, margin=[0, 0, 0, 0],
+               background=trn, size=26, margin=[0, 0, 0, 0],
         )

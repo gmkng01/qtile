@@ -52,6 +52,10 @@ keys = [
              lazy.spawn("google-chrome-stable"),
              desc='Launches My Chrome'
              ),
+         Key([mod1, "shift"], "n",
+             lazy.spawn("terminator -e nmtui"),
+             desc='Launches My Chrome'
+             ),
          Key([mod1], "s",
              lazy.spawn("spotify"),
              desc='Launches My Spotify'
