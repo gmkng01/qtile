@@ -91,6 +91,10 @@ keys = [
          Key([mod1], "n",
              lazy.spawn("pcmanfm"),
              desc='File Manager'
+             ),
+         Key([mod1], "b",
+             lazy.spawn("blueman-manager"),
+             desc='blueman-manager'
              ),         
          Key([mod], "Tab",
              lazy.next_layout(),
