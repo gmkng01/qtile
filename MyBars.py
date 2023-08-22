@@ -227,19 +227,19 @@ mera_bar1 = Bar([
 
                
 
-                # widget.Systray(
-                #         # background="#000000",
-                #         # foreground = "#000000",
-                #         icon_size = 22,
-                #         decorations = [
-                #             BorderDecoration (
-                #                 colour = slide1,
-                #                 # padding = 200,
-                #                 radius = 20,
-                #                 filled = True
-                #             ),
-                #         ],
-                #         )
+                widget.Systray(
+                        # background="#000000",
+                        # foreground = "#000000",
+                        icon_size = 22,
+                        decorations = [
+                            BorderDecoration (
+                                colour = slide1,
+                                # padding = 200,
+                                radius = 20,
+                                filled = True
+                            ),
+                        ],
+                        )
                                        
             ],
                background=trn, size=26, margin=[0, 0, 0, 0],
