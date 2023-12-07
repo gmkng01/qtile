@@ -211,7 +211,7 @@ mera_bar1 = Bar([
                         text = '',
                         font = "JetBrainsMono Nerd Font Mono",
                         background = trn,
-                        foreground = rand_,
+                        foreground = trn,
                         padding = 0,
                         fontsize = 22
                         ),
@@ -228,17 +228,10 @@ mera_bar1 = Bar([
                
 
                 widget.Systray(
-                        # background="#000000",
-                        # foreground = "#000000",
+                        background="#000000",
+                        foreground = "#000000",
                         icon_size = 22,
-                        decorations = [
-                            BorderDecoration (
-                                colour = slide1,
-                                # padding = 200,
-                                radius = 20,
-                                filled = True
-                            ),
-                        ],
+                        
                         )
                                        
             ],
