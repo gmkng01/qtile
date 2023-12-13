@@ -2,6 +2,7 @@ import colors
 from libqtile import qtile
 from libqtile import widget
 from libqtile.bar import Bar
+from libqtile.lazy import lazy
 from colors import gruvbox, gruvbox2
 from qtile_extras import widget
 from qtile_extras.widget.decorations import PowerLineDecoration, RectDecoration, BorderDecoration
@@ -38,87 +39,101 @@ trn = colors.changable['trn']
 
 mera_bar1 = Bar([
                 widget.TextBox(
-                        text='',
+                        text='ё',
                         background = rand_,
                         # foreground = ,
                         fontsize = 25,
                         mouse_callbacks = {'Button1': menu,},
-                        padding = 4,                        
+                        padding = 4,  
+                        font = "NFS font"                      
                         ),
                
                 widget.TextBox(
-                        text = '',
+                        text = '',
                         font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
+                        background = background,
                         foreground = rand_,
                         padding = 0,
                         fontsize = 19
                         ),
 
                 widget.TextBox(
-                        text = '',
+                        text = '',
                         font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
+                        background = background,
                         foreground = menuback,
                         padding = 0,
                         fontsize = 22
                         ),
 
-                widget.GroupBox(
-                        active=colors.changable['active'],
-                        inactive=colors.draculla['cl'],
-                        highlight_method='line',
-                        block_highlight_text_color=colors.changable['highlight'],
-                        borderwidth=0,
-                        highlight_color=menuback,
-                        background=menuback,
-                        fontsize = 25,
-                        margin_y = 1,
-                        margin_x = 1,
-                        padding_y = 0,
-                        padding_x = 3,
-                        ),
+
+                widget.AGroupBox(
+                        font = "NFS font",
+                        fontsize = 18,
+                        background = menuback,
+                        foreground = background,
+                        border = trn,
+                        scroll = True,
+                        scroll_clear = True,
+                        width = 30,
+                        mouse_callbacks = {'Button1': lazy.screen.next_group(),
+                                           'Button2':lazy.screen.toggle_group(), 
+                                           'Button3':lazy.screen.prev_group()}
+                ),
+
+
+                # widget.GroupBox(
+                #         active=colors.changable['active'],
+                #         inactive=colors.draculla['cl'],
+                #         highlight_method='line',
+                #         block_highlight_text_color=colors.changable['highlight'],
+                #         borderwidth=0,
+                #         highlight_color=menuback,
+                #         background=menuback,
+                #         foreground = rand_,
+                #         fontsize = 18,
+                #         # margin_y = 1,
+                #         # margin_x = 1,
+                #         # padding_y = 10,
+                #         # padding_x = 0,
+                #         font = "Speedeasy Speedy"
+                #         ),
 
                 widget.TextBox(
-                        text = '',
+                        text = '',
                         font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
+                        background = background,
                         foreground = menuback,
                         padding = 0,
-                        fontsize = 19
+                        fontsize = 22
                         ),
                 widget.TextBox(
-                        text = '',
+                        text = '',
                         font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
+                        background = background,
                         foreground = background,
                         padding = 0,
                         fontsize = 22
                         ),
                     
                 widget.CurrentLayout(
-                        # background=gruvbox['fg0'],
-                        foreground=gruvbox['fg9']
-                        ),
-
-                widget.WindowCount(
-                        text_format=' {num}',
+                        fmt = '{} ',
                         # background=gruvbox['fg0'],
                         foreground=gruvbox['fg9'],
-                        show_zero=True,
-                        ),                    
-                   
-                widget.TextBox(
-                        text = '',
-                        font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
-                        foreground = background,
-                        padding = 0,
+                        font = "NFS font",
                         fontsize = 19
                         ),
 
+                widget.WindowCount(
+                        text_format=' {num}  ',
+                        # background=gruvbox['fg0'],
+                        foreground=gruvbox['fg9'],
+                        show_zero=True,
+                        font = "NFS font"
+                        ),                    
+                   
                 widget.TextBox(
-                        text = '',
+                        text = '',
                         font = "JetBrainsMono Nerd Font Mono",
                         background = trn,
                         foreground = background,
@@ -127,7 +142,16 @@ mera_bar1 = Bar([
                         ),
 
                 widget.TextBox(
-                        text = '',
+                        text = '',
+                        font = "JetBrainsMono Nerd Font Mono",
+                        background = trn,
+                        foreground = background,
+                        padding = 0,
+                        fontsize = 22
+                        ),
+
+                widget.TextBox(
+                        text = '',
                         font = "JetBrainsMono Nerd Font Mono",
                         background = trn,
                         foreground = background,
@@ -140,7 +164,7 @@ mera_bar1 = Bar([
                         ),
 
                 widget.TextBox(
-                        text = '',
+                        text = '',
                         font = "JetBrainsMono Nerd Font Mono",
                         background = trn,
                         foreground = background,
@@ -149,72 +173,82 @@ mera_bar1 = Bar([
                         ),
 
                 widget.TextBox(
-                        text = '',
+                        text = '',
+                        font = "JetBrainsMono Nerd Font Mono",
+                        background = trn,
+                        foreground = background,
+                        padding = 0,
+                        fontsize = 22
+                        ),
+
+                widget.TextBox(
+                        text = '',
                         font = "JetBrainsMono Nerd Font Mono",
                         background = trn,
                         foreground = background,
                         padding = 0,
                         fontsize = 19
-                        ),
-
-                widget.TextBox(
-                        text = '',
-                        font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
-                        foreground = background,
-                        padding = 0,
-                        fontsize = 22
                         ),
 
                 widget.Net(
-                        format = ' {down}  {up}',
+                        format = '« {down} » {up} ',
                         #     background=netback,
-                        foreground=netback
+                        foreground=netback,
+                        font = "NFS font",
+                        fontsize = 19
                         ), 
 
                 widget.TextBox(
-                        text = '',
+                        text = '',
                         font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
-                        foreground = background,
-                        padding = 0,
-                        fontsize = 19
-                        ),
-
-                widget.TextBox(
-                        text = '',
-                        font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
+                        background = menuback,
                         foreground = background,
                         padding = 0,
                         fontsize = 22
                         ),
 
+                widget.TextBox(
+                        text = '',
+                        font = "JetBrainsMono Nerd Font Mono",
+                        background = menuback,
+                        foreground = background,
+                        padding = 0,
+                        fontsize = 22
+                        ),
+
+                widget.TextBox(
+                  text = "Ë ",
+                  foreground = timeback,
+                  font = "Dodger Super-Italic",
+                  fontsize = 22
+                ),
+
                 widget.Clock(
-                        font = "JetBrainsMono Nerd Font",
+                        font = "NFS font",
                         foreground = timeback,
                         #     background = ,
-                        format=' %d%b %a-%H:%M',
+                        fontsize = 18,
+                        format=' %d %b %a - %H:%M ',
                         mouse_callbacks = {'Button3': lambda: qtile.cmd_spawn("korganizer")}                            
                         ),
 
                 widget.TextBox(
-                        text = '',
+                        text = '',
                         font = "JetBrainsMono Nerd Font Mono",
                         background = trn,
                         foreground = background,
                         padding = 0,
-                        fontsize = 19
-                        ),
-
-                widget.TextBox(
-                        text = '',
-                        font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
-                        foreground = trn,
-                        padding = 0,
                         fontsize = 22
                         ),
+
+                # widget.TextBox(
+                #         text = '',
+                #         font = "JetBrainsMono Nerd Font Mono",
+                #         background = trn,
+                #         foreground = trn,
+                #         padding = 0,
+                #         fontsize = 22
+                #         ),
 
                 #     widget.ALSAWidget(
                         # text='',
@@ -227,12 +261,12 @@ mera_bar1 = Bar([
 
                
 
-                widget.Systray(
-                        background="#000000",
-                        foreground = "#000000",
-                        icon_size = 22,
+                # widget.Systray(
+                #         background="#000000",
+                #         foreground = "#000000",
+                #         icon_size = 22,
                         
-                        )
+                #         )
                                        
             ],
                background=trn, size=26, margin=[0, 0, 0, 0],

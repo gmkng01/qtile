@@ -88,7 +88,7 @@ changable = {
     'slide2':           '#A4F1FD',
     'rand3':            '#000000',
     'rand4':            '#341514',
-    'menuback':         '#F5F5F5',
+    'menuback':         '#F0EFEA',
     'timeback':         '#cbeef3',
     'netback':          '#FFD97F',
     'highlight':        '#FF8542',

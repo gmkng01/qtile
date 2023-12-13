@@ -198,12 +198,14 @@ my_mouse = [Drag([mod], "Button1", lazy.window.set_position_floating(), start=la
 # Grouping I created -*-
 
 groups = [
-    Group('1', label=" ", matches = [Match(wm_class = "firefox")], layout='bsp'),
-    Group('2', label=" ", matches = [Match(wm_class = "Code")], layout='max'),
-    Group('3', label=" ", layout='bsp'),
-    Group('4', label=" ", matches = [Match(wm_class = "pcmanfm")], layout='bsp'),
-    Group('5', label=" ", matches = [Match(wm_class = "discord"), Match(wm_class="TelegramDesktop")], layout='bsp'),
-    Group('6', label="", matches = [Match(wm_class = "vysor")], layout='bsp'),
+    Group('1', label="WEB. ", matches = [Match(wm_class = "firefox")], layout='bsp'),
+    Group('2', label="CODE. ", matches = [Match(wm_class = "Code")], layout='max'),
+    Group('3', label="TERM. ", layout='bsp'),
+    Group('4', label="FILES. ", matches = [Match(wm_class = "pcmanfm")], layout='bsp'),
+    Group('5', label="SOCIAL. ", matches = [Match(wm_class = "discord"), Match(wm_class="TelegramDesktop")], layout='bsp'),
+    Group('6', label="Ж ", matches = [Match(wm_class = "vysor")], layout='bsp'),
+    Group('7', label="Ж ", layout='bsp'),
+    Group('8', label="Ж ", layout='bsp'),
     ]
 
 for i in groups:
@@ -231,7 +233,7 @@ for i in groups:
     )
 
 layout_theme = {"border_width": 0,
-                "margin": [6, 6, 6, 6],
+                "margin": [0, 0, 0, 0],
                 "border_focus": "e1acff",
                 "border_normal": "1D2330"
                 }
