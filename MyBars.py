@@ -40,8 +40,8 @@ trn = colors.changable['trn']
 mera_bar1 = Bar([
                 widget.TextBox(
                         text='ё',
-                        background = rand_,
-                        # foreground = ,
+                        background = menuback,
+                        foreground = background,
                         fontsize = 25,
                         mouse_callbacks = {'Button1': menu,},
                         padding = 4,  
@@ -52,26 +52,26 @@ mera_bar1 = Bar([
                         text = '',
                         font = "JetBrainsMono Nerd Font Mono",
                         background = background,
-                        foreground = rand_,
-                        padding = 0,
-                        fontsize = 19
-                        ),
-
-                widget.TextBox(
-                        text = '',
-                        font = "JetBrainsMono Nerd Font Mono",
-                        background = background,
                         foreground = menuback,
                         padding = 0,
                         fontsize = 22
                         ),
 
+                # widget.TextBox(
+                #         text = '',
+                #         font = "JetBrainsMono Nerd Font Mono",
+                #         background = background,
+                #         foreground = menuback,
+                #         padding = 0,
+                #         fontsize = 22
+                #         ),
+
 
                 widget.AGroupBox(
                         font = "NFS font",
                         fontsize = 18,
-                        background = menuback,
-                        foreground = background,
+                        background = background,
+                        foreground = menuback,
                         border = trn,
                         scroll = True,
                         scroll_clear = True,
@@ -80,7 +80,6 @@ mera_bar1 = Bar([
                                            'Button2':lazy.screen.toggle_group(), 
                                            'Button3':lazy.screen.prev_group()}
                 ),
-
 
                 # widget.GroupBox(
                 #         active=colors.changable['active'],
@@ -102,32 +101,41 @@ mera_bar1 = Bar([
                 widget.TextBox(
                         text = '',
                         font = "JetBrainsMono Nerd Font Mono",
+                        background = menuback,
+                        foreground = background,
+                        padding = 0,
+                        fontsize = 22
+                        ),
+                # widget.TextBox(
+                #         text = '',
+                #         font = "JetBrainsMono Nerd Font Mono",
+                #         background = background,
+                #         foreground = background,
+                #         padding = 0,
+                #         fontsize = 22
+                #         ),
+                    
+                widget.CurrentLayout(
+                        fmt = '{} ',
+                        background=menuback,
+                        foreground=background,
+                        font = "NFS font",
+                        fontsize = 19
+                        ),
+                
+                widget.TextBox(
+                        text = '',
+                        font = "JetBrainsMono Nerd Font Mono",
                         background = background,
                         foreground = menuback,
                         padding = 0,
                         fontsize = 22
                         ),
-                widget.TextBox(
-                        text = '',
-                        font = "JetBrainsMono Nerd Font Mono",
-                        background = background,
-                        foreground = background,
-                        padding = 0,
-                        fontsize = 22
-                        ),
-                    
-                widget.CurrentLayout(
-                        fmt = '{} ',
-                        # background=gruvbox['fg0'],
-                        foreground=gruvbox['fg9'],
-                        font = "NFS font",
-                        fontsize = 19
-                        ),
 
                 widget.WindowCount(
                         text_format=' {num}  ',
-                        # background=gruvbox['fg0'],
-                        foreground=gruvbox['fg9'],
+                        background=background,
+                        foreground=menuback,
                         show_zero=True,
                         font = "NFS font"
                         ),                    
@@ -156,7 +164,7 @@ mera_bar1 = Bar([
                         background = trn,
                         foreground = background,
                         padding = 0,
-                        fontsize = 19
+                        fontsize = 22
                         ),
 
                 widget.Spacer(
@@ -190,13 +198,38 @@ mera_bar1 = Bar([
                         fontsize = 19
                         ),
 
-                widget.Net(
-                        format = '« {down} » {up} ',
-                        #     background=netback,
-                        foreground=netback,
-                        font = "NFS font",
-                        fontsize = 19
-                        ), 
+                 
+                
+                widget.WidgetBox(
+                        font = 'Algol',
+                        fontsize = 50,
+                        text_closed = '«',
+                        text_open = "»",
+                        widgets=[
+                                widget.Net(
+                                        format = '« {down} » {up} ',                                        
+                                        foreground=netback,
+                                        font = "NFS font",
+                                        fontsize = 19,
+                                        # max_chars = 14,
+                                        padding = 5,
+                                        # prefix = 100
+                                        width = 160
+                                        ),
+
+                                widget.Memory(
+                                        fmt = "{} ",
+                                        font = "NFS font",
+                                        fontsize = 18
+                                        ),
+                                # widget.Systray(
+                                #         background=background,
+                                #         foreground = menuback,
+                                #         icon_size = 22,
+                                
+                                #         )
+                                ]                                        
+                                ), 
 
                 widget.TextBox(
                         text = '',
@@ -216,12 +249,12 @@ mera_bar1 = Bar([
                         fontsize = 22
                         ),
 
-                widget.TextBox(
-                  text = "Ë ",
-                  foreground = timeback,
-                  font = "Dodger Super-Italic",
-                  fontsize = 22
-                ),
+                # widget.TextBox(
+                #   text = "Ë ",
+                #   foreground = timeback,
+                #   font = "Dodger Super-Italic",
+                #   fontsize = 22
+                # ),
 
                 widget.Clock(
                         font = "NFS font",
@@ -241,14 +274,14 @@ mera_bar1 = Bar([
                         fontsize = 22
                         ),
 
-                # widget.TextBox(
-                #         text = '',
-                #         font = "JetBrainsMono Nerd Font Mono",
-                #         background = trn,
-                #         foreground = trn,
-                #         padding = 0,
-                #         fontsize = 22
-                #         ),
+                widget.TextBox(
+                        text = '      ',
+                        font = "JetBrainsMono Nerd Font Mono",
+                        background = trn,
+                        foreground = trn,
+                        padding = 0,
+                        fontsize = 22
+                        ),
 
                 #     widget.ALSAWidget(
                         # text='',
@@ -262,8 +295,8 @@ mera_bar1 = Bar([
                
 
                 # widget.Systray(
-                #         background="#000000",
-                #         foreground = "#000000",
+                #         background= trn,
+                #         # foreground = "#000000",
                 #         icon_size = 22,
                         
                 #         )
