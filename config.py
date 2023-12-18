@@ -243,9 +243,9 @@ for i in groups:
     )
 
 layout_theme = {"border_width": 0,
-                "margin": [0, 0, 0, 0],
-                "border_focus": "e1acff",
-                "border_normal": "1D2330"
+                "margin": [10, 10, 10, 10],
+                "border_focus": "ffffff00",
+                "border_normal": "ffffff00"
                 }
 
 layouts = [

@@ -255,7 +255,7 @@ mera_bar1 = Bar([
                         foreground = background,
                         background = menuback,
                         fontsize = 18,
-                        format=' %d %b %a - %H:%M ',
+                        format=' %d %b %a - %H:%M  ',
                         mouse_callbacks = {'Button3': lambda: qtile.cmd_spawn("korganizer")}                            
                         ),
 
@@ -265,13 +265,13 @@ mera_bar1 = Bar([
                         background = background,
                         foreground = menuback,
                         padding = 0,
-                        fontsize = 23
+                        fontsize = 25
                         ),
 
                 widget.TextBox(
-                        text = '       ',
+                        text = '     .',
                         font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
+                        background = background,
                         foreground = trn,
                         padding = 0,
                         fontsize = 22
@@ -299,5 +299,5 @@ mera_bar1 = Bar([
                 #         )
                                        
             ],
-               background=trn, size=26, margin=[0, 0, 0, 0],
+               background=trn, size=26, margin=[10, 10, 0, 10],
         )
