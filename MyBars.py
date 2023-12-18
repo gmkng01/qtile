@@ -207,34 +207,35 @@ mera_bar1 = Bar([
                         text_open = "»",
                         widgets=[
                                 widget.Net(
-                                        format = '« {down} » {up} ',                                        
+                                        format = '« {down} » {up}   ',                                        
                                         foreground=netback,
                                         font = "NFS font",
                                         fontsize = 19,
                                         # max_chars = 14,
                                         padding = 5,
                                         # prefix = 100
-                                        width = 160
+                                        width = 200
                                         ),
 
                                 widget.Memory(
-                                        fmt = "{} ",
+                                        fmt = "{}",
                                         font = "NFS font",
-                                        fontsize = 18
+                                        fontsize = 18,
+                                        width = 165
                                         ),
                                 # widget.Systray(
                                 #         background=background,
                                 #         foreground = menuback,
                                 #         icon_size = 22,
                                 
-                                #         )
+                                        # )
                                 ]                                        
                                 ), 
 
                 widget.TextBox(
                         text = '',
                         font = "JetBrainsMono Nerd Font Mono",
-                        background = menuback,
+                        background = trn,
                         foreground = background,
                         padding = 0,
                         fontsize = 22
@@ -243,23 +244,16 @@ mera_bar1 = Bar([
                 widget.TextBox(
                         text = '',
                         font = "JetBrainsMono Nerd Font Mono",
-                        background = menuback,
-                        foreground = background,
+                        background = trn,
+                        foreground = menuback,
                         padding = 0,
                         fontsize = 22
                         ),
 
-                # widget.TextBox(
-                #   text = "Ë ",
-                #   foreground = timeback,
-                #   font = "Dodger Super-Italic",
-                #   fontsize = 22
-                # ),
-
                 widget.Clock(
                         font = "NFS font",
-                        foreground = timeback,
-                        #     background = ,
+                        foreground = background,
+                        background = menuback,
                         fontsize = 18,
                         format=' %d %b %a - %H:%M ',
                         mouse_callbacks = {'Button3': lambda: qtile.cmd_spawn("korganizer")}                            
@@ -268,20 +262,23 @@ mera_bar1 = Bar([
                 widget.TextBox(
                         text = '',
                         font = "JetBrainsMono Nerd Font Mono",
-                        background = trn,
-                        foreground = background,
+                        background = background,
+                        foreground = menuback,
                         padding = 0,
-                        fontsize = 22
+                        fontsize = 23
                         ),
 
                 widget.TextBox(
-                        text = '      ',
+                        text = '       ',
                         font = "JetBrainsMono Nerd Font Mono",
                         background = trn,
                         foreground = trn,
                         padding = 0,
                         fontsize = 22
                         ),
+
+
+
 
                 #     widget.ALSAWidget(
                         # text='',

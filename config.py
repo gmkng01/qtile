@@ -64,14 +64,7 @@ keys = [
              lazy.spawn("/home/abhi/.config/rofi/launchers/type-1/launcher.sh"),
              desc='Run Launcher'
              ),
-         Key([mod, "shift"], "x",
-             lazy.spawn("shutdown -P now"),
-             desc='Shut Down'
-             ),
-         Key([mod, "shift"], "r",
-             lazy.spawn("reboot"),
-             desc='Reboot'
-             ),
+
          Key([mod1], "f",
              lazy.spawn("firefox"),
              desc='Firefox'
@@ -112,6 +105,23 @@ keys = [
              lazy.shutdown(),
              desc='Shutdown Qtile'
              ),
+         Key([mod, "shift"], "x",
+             lazy.spawn("shutdown -P now"),
+             desc='Shut Down'
+             ),
+         Key([mod, "shift"], "r",
+             lazy.spawn("reboot"),
+             desc='Reboot'
+             ),
+         Key([mod], "l",
+             lazy.spawn("betterlockscreen -l"),
+             desc='Shut Down'
+             ),
+         Key([mod], "s",
+             lazy.spawn("systemctl suspend"),
+             desc='Shut Down'
+             ),
+
 
          ### Window controls           
          Key([mod], "j",
@@ -137,7 +147,7 @@ keys = [
              lazy.layout.decrease_nmaster(),
              desc='Shrink window (MonadTall), decrease number in master pane (Tile)'
              ),
-         Key([mod], "l",
+         Key([mod, "shift"], "l",
              lazy.layout.grow(),
              lazy.layout.increase_nmaster(),
              desc='Expand window (MonadTall), increase number in master pane (Tile)'

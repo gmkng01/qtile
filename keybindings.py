@@ -41,14 +41,7 @@ my_keys = [
              lazy.spawn("/home/abhi/.config/rofi/launchers/type-1/launcher.sh"),
              desc='Run Launcher'
              ),
-         Key([mod, "shift"], "x",
-             lazy.spawn("shutdown -P now"),
-             desc='Shut Down'
-             ),
-         Key([mod, "shift"], "r",
-             lazy.spawn("reboot"),
-             desc='Reboot'
-             ),
+         
          Key([mod1], "f",
              lazy.spawn("firefox"),
              desc='Firefox'
@@ -73,6 +66,8 @@ my_keys = [
              lazy.next_layout(),
              desc='Toggle through layouts'
              ),
+
+         ### Kill, Restart and Lock
          Key([mod1], "q",
              lazy.window.kill(),
              desc='Kill active window'
@@ -85,6 +80,22 @@ my_keys = [
              lazy.shutdown(),
              desc='Shutdown Qtile'
              ),
+         Key([mod, "shift"], "x",
+             lazy.spawn("systemctl suspend"),
+             desc='Shut Down'
+             ),
+         Key([mod, "shift"], "r",
+             lazy.spawn("reboot"),
+             desc='Reboot'
+             ),
+         Key([mod, "shift"], "l",
+             lazy.spawn("betterlockscreen -l"),
+             desc='Shut Down'
+             ),
+        #  Key([mod, "shift"], "s",
+        #      lazy.spawn("systemctl suspend"),
+        #      desc='Shut Down'
+        #      ),
 
          ### Window controls           
          Key([mod], "j",
