@@ -195,7 +195,7 @@ mera_bar1 = Bar([
                         background = trn,
                         foreground = background,
                         padding = 0,
-                        fontsize = 19
+                        fontsize = 22
                         ),
 
                  
@@ -269,7 +269,7 @@ mera_bar1 = Bar([
                         ),
 
                 widget.TextBox(
-                        text = '     .',
+                        text = '     .  ',
                         font = "JetBrainsMono Nerd Font Mono",
                         background = background,
                         foreground = trn,

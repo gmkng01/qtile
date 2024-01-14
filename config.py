@@ -54,7 +54,7 @@ keys = [
              ),
          Key([mod1, "shift"], "n",
              lazy.spawn("terminator -e nmtui"),
-             desc='Launches My Chrome'
+             desc='NetworkManager Tools'
              ),
          Key([mod1], "s",
              lazy.spawn("spotify"),
@@ -103,7 +103,6 @@ keys = [
              ),
          Key([mod, "shift"], "q",
              lazy.shutdown(),
-             desc='Shutdown Qtile'
              ),
          Key([mod, "shift"], "x",
              lazy.spawn("shutdown -P now"),

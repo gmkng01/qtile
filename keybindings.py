@@ -6,7 +6,7 @@ from libqtile.lazy import lazy
 
 mod = "mod4"
 mod1 = "mod1"
-terminal = "terminator"
+terminal = "alacritty"
 
 
 

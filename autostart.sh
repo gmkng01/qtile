@@ -19,7 +19,7 @@ volctl &
 # find /usr/share/backgrounds/dtos-backgrounds/ -type f | shuf -n 1 | xargs xwallpaper --stretch &
 # 3. Uncomment to set wallpaper with nitrogen
 nitrogen --restore &
-trayer --transparent true --width 4 --edge top --align right --tint 0xEF0EFEA --alpha 0 --tint 0x000000 --margin 10 --distance 10 --distancefrom top &
+trayer --transparent true --width 5 --edge top --align right --tint 0xEF0EFEA --alpha 0 --tint 0x000000 --margin 10 --distance 10 --distancefrom top &
 # /home/abhi/.config/polybar/launch.sh &
 # polybar &
 
