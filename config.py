@@ -38,7 +38,7 @@ def brightdown():
 
 # Menu
 def menu():
-  qtile.cmd_spawn('/home/abhi/.config/rofi/launchers/type-1/launcher.sh')
+  qtile.cmd_spawn('~/.config/rofi/launchers/type-1/launcher.sh')
 
 # ********************************-------------------------------Key_bidings-------------------------------********************************
 
