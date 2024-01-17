@@ -2,8 +2,7 @@
 import os
 import colors
 import subprocess
-from libqtile import hook
-from libqtile import qtile
+from libqtile import hook, qtile, extension
 from colors import gruvbox, nord_fox, gruvbox2
 from libqtile.lazy import lazy
 from libqtile.core.manager import Qtile
@@ -11,6 +10,7 @@ from libqtile import bar, layout, widget
 from libqtile.backend.base import Window
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from MyBars import mera_bar1
+# from Colours_Decor import *
 
 # Additional Functions -------------***********-----------
 
@@ -44,13 +44,13 @@ keys = [
              lazy.spawn("terminator -e nmtui"),
              desc='NetworkManager Tools'
              ),
-         Key([mod1], "s",
-             lazy.spawn("spotify"),
-             desc='Launches My Spotify'
-             ),
+        #  Key([mod1], "s",
+        #      lazy.spawn("spotify"),
+        #      desc='Launches My Spotify'
+        #      ),
          Key([mod, "shift"], "Return",
              lazy.spawn("/home/abhi/.config/rofi/launchers/type-1/launcher.sh"),
-             desc='Run Launcher'
+             desc='Run Launcher Menu'
              ),
 
          Key([mod1], "f",
@@ -183,7 +183,19 @@ keys = [
          # ScreenShots
          Key([], "Print", lazy.spawn("scrot -q 100 -e 'mv $f /home/abhi/Pictures'")),
          Key(["control"], "Print", lazy.spawn('xfce4-screenshooter')),
-         Key(["control", "shift"], "Print", lazy.spawn("scrot -q 100 -s -e 'mv $f /home/abhi/Pictures'"))
+         Key(["control", "shift"], "Print", lazy.spawn("scrot -q 100 -s -e 'mv $f /home/abhi/Pictures'")),
+
+
+         Key([mod, "control"], 'r', lazy.run_extension(extension.DmenuRun(
+                dmenu_prompt=">",
+                dmenu_font="Andika-8",
+                background="#15181a",
+                foreground="#00ff00",
+                selected_background="#079822",
+                selected_foreground="#fff",
+                dmenu_height=24,  # Only supported by some dmenu forks
+    ))),
+
 ]
 
 # Drag floating layouts.
@@ -229,50 +241,105 @@ for i in groups:
         ]
     )
 
-layout_theme = {"border_width": 0,
-                "margin": [10, 10, 10, 10],
-                "border_focus": "ffffff00",
-                "border_normal": "ffffff00"
-                }
+# layout_theme = {"border_width": 0,
+#                 "margin": [10, 10, 10, 10],
+#                 "border_focus": colors.changable['trn'],
+#                 "border_normal": "ffffff00"
+#                 }
+# floating_layout = {"border_width":0,}
 
 layouts = [
-    layout.MonadWide(**layout_theme
-    #    border_width = 0,
-    #    fullscreen_border_width = 0,
-    #    max_border_width = 0,   
+    layout.MonadWide(
+    #    **layout_theme
+       border_width = 0,
+       fullscreen_border_width = 0,
+       max_border_width = 0,   
+       margin =  [10, 10, 10, 10],
     ),
-    layout.Bsp(**layout_theme
+    # layout.Bsp(
+    # #    **layout_theme
     #    border_width = 0,
     #    fullscreen_border_width = 0,
     #    max_border_width = 0,
+    #    border_focus = colors.changable['trn'],
+    #    margin =  [10, 10, 10, 10],
+    # ),
+
+    layout.Bsp(margin=10, border_focus=colors.changable['menuback'],border_width = 0, fair=False, border_on_single=True),
+
+    layout.Columns(
+    #    **layout_theme
+       border_width = 0,
+       fullscreen_border_width = 0,
+       max_border_width = 0,
+       margin =  [10, 10, 10, 10],
     ),
-    layout.Columns(**layout_theme
-    #    border_width = 0,
-    #    fullscreen_border_width = 0,
-    #    max_border_width = 0,
+    layout.Zoomy(
+    #    **layout_theme
+       border_width = 0,
+       fullscreen_border_width = 0,
+       max_border_width = 0,
+       margin =  [10, 10, 10, 10],
     ),
-    layout.Zoomy(**layout_theme
-    #    border_width = 0,
-    #    fullscreen_border_width = 0,
-    #    max_border_width = 0,
-    ),
-    layout.MonadTall(**layout_theme
-    #    border_width = 0,
-    #    fullscreen_border_width = 0,
-    #    max_border_width = 0,
+    layout.MonadTall(
+    #    **layout_theme
+       border_width = 0,
+       fullscreen_border_width = 0,
+       max_border_width = 0,
+       margin =  [10, 10, 10, 10],
     ),
     layout.Max(
-       **layout_theme
-    #    border_width = 0,
-    #    fullscreen_border_width = 0,
-    #    max_border_width = 0,
+    #    **layout_theme
+       border_width = 0,
+       fullscreen_border_width = 0,
+       max_border_width = 0,
+       margin =  [10, 10, 10, 10],
     ),
-    layout.Floating(**layout_theme,
-    #    border_width = 0,
-    #    fullscreen_border_width = 0,
-    #    max_border_width = 0,
+    layout.Floating(
+    #    **layout_theme,
+       border_width = 0,
+       border_focus=colors.changable['menuback'],
+       fullscreen_border_width = 0,
+       max_border_width = 0,
+       margin =  [10, 10, 10, 10],
     )
 ]
+
+## Layouts ------------------------------
+var_bg_color = '#2e3440'
+var_active_bg_color = '#81A1C1'
+var_active_fg_color = '#2e3440'
+var_inactive_bg_color = '#3d4555'
+var_inactive_fg_color = '#D8DEE9'
+var_urgent_bg_color = '#BF616A'
+var_urgent_fg_color = '#D8DEE9'
+var_section_fg_color = '#EBCB8B'
+var_active_color = '#81A1C1'
+var_normal_color = '#3d4555'
+var_border_width = 2
+var_margin = [5,5,5,5]
+var_gap_top = 45
+var_gap_bottom = 5
+var_gap_left = 5
+var_gap_right = 5 
+
+#  The default floating layout to use. This allows you to set custom floating rules among other things if you wish.
+floating_layout = layout.Floating(
+	border_focus=var_active_color,
+	border_normal=var_normal_color,
+	border_width=var_border_width,
+    float_rules=[
+        # Run the utility of `xprop` to see the wm class and name of an X client.
+        *layout.Floating.default_float_rules,
+        Match(wm_class="alacritty-float|Music"),
+        Match(wm_class="Lxappearance|Nitrogen"),
+        Match(wm_class="Pavucontrol|Xfce4-power-manager-settings|Nm-connection-editor"),
+        Match(wm_class="feh|Viewnior|Gpicview|Gimp|MPlayer|Vlc|Spotify"),
+        Match(wm_class="Kvantum Manager|qt5ct"),
+        Match(wm_class="VirtualBox Manager|qemu|Qemu-system-x86_64"),
+        Match(title="branchdialog"),
+    ]
+)
 
 widget_defaults = dict(
     background = colors.gruvbox['bg'],
@@ -286,7 +353,11 @@ extension_defaults = widget_defaults.copy()
 # ********************************                          BAR                               ********************************
 
 
-screens = [ Screen(top=mera_bar1) ]
+screens = [ Screen(
+   wallpaper = '~/Pictures/Wall/image_2023-05-11_10-40-12.png',
+   wallpaper_mode = 'fill',
+   top=mera_bar1
+   )]
 
 dgroups_key_binder = None
 dgroups_app_rules = []  
